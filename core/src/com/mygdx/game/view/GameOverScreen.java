@@ -1,41 +1,58 @@
 package com.mygdx.game.view;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL30;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.mygdx.game.IsoGame;
+import com.mygdx.game.model.Assets;
+
 /**
  * Created by Zach Sogolow on 2/21/2015.
  */
 public class GameOverScreen extends MyScreen {
-    @Override
-    public void show() {
-        super.show();
+
+    Stage stage;
+    String messege = "Game Over";
+    SpriteBatch batch;
+
+    public GameOverScreen(IsoGame game) {
+        this.game = game;
+        batch = new SpriteBatch();
+        stage = new Stage();
+        Table table = new Table();
+        table.setFillParent(true);
+        table.top().pad(60);
+        Label text = new Label(messege, Assets.defultSkin);
+        table.add(text).row();
+        stage.addActor(table);
     }
 
     @Override
     public void render(float delta) {
-        super.render(delta);
-    }
+        Gdx.gl.glClearColor(0, 0, 0, 0);
+        Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
 
-    @Override
-    public void resize(int width, int height) {
-        super.resize(width, height);
-    }
+        batch.begin();
+        batch.draw(Assets.menuBg,
+                (Math.max(0, Gdx.graphics.getWidth() - 700) / 2),
+                (Math.max(0, Gdx.graphics.getHeight() - 480) / 2));
+        batch.end();
 
-    @Override
-    public void pause() {
-        super.pause();
-    }
+        stage.getCamera().update();
+        stage.draw();
 
-    @Override
-    public void resume() {
-        super.resume();
-    }
-
-    @Override
-    public void hide() {
-        super.hide();
+        if (Gdx.input.isTouched()) {
+            game.setScreen(new MenuScreen(game));
+            dispose();
+        }
     }
 
     @Override
     public void dispose() {
-        super.dispose();
+        stage.dispose();
+
     }
 }

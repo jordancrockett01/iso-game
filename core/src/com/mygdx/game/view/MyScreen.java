@@ -1,6 +1,7 @@
 package com.mygdx.game.view;
 
 import com.badlogic.gdx.Screen;
+import com.mygdx.game.IsoGame;
 
 /**
  * Created by Zach Sogolow on 2/21/2015.
@@ -8,6 +9,8 @@ import com.badlogic.gdx.Screen;
 public abstract class MyScreen implements Screen {
 
     private static final String TAG = MyScreen.class.getName();
+
+    IsoGame game;
 
     @Override
     public void show() {

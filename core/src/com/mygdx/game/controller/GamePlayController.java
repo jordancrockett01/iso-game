@@ -1,4 +1,4 @@
-package com.mygdx.game.desktop.controller;
+package com.mygdx.game.controller;
 
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.math.Vector2;

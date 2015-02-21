@@ -1,9 +1,9 @@
-package com.mygdx.game.desktop.view;
+package com.mygdx.game.view;
 
 /**
  * Created by Zach Sogolow on 2/21/2015.
  */
-public class GameOverScreen extends MyScreen {
+public class MenuScreen extends MyScreen {
     @Override
     public void show() {
         super.show();

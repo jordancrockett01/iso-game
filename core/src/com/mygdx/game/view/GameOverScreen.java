@@ -1,9 +1,14 @@
-package com.mygdx.game.desktop.view;
+package com.mygdx.game.view;
 
 /**
  * Created by Zach Sogolow on 2/21/2015.
  */
-public class PlayScreen extends MyScreen {
+public class GameOverScreen extends MyScreen {
+    @Override
+    public void show() {
+        super.show();
+    }
+
     @Override
     public void render(float delta) {
         super.render(delta);
@@ -32,10 +37,5 @@ public class PlayScreen extends MyScreen {
     @Override
     public void dispose() {
         super.dispose();
-    }
-
-    @Override
-    public void show() {
-        super.show();
     }
 }

@@ -63,7 +63,7 @@ public class StaticStage extends Stage implements InputProcessor {
                 SingletonsRepository.hero
                         .updateOffsetX(SingletonsRepository.hero.getSpeed()
                                 * touchpad.getKnobPercentX());
-            // TODO offsetY
+            //  offsetY
             if (SingletonsRepository.hero.getY() > Assets.MOVING_CAM_MIN_Y
                     && SingletonsRepository.hero.getY() < Assets.MOVING_CAM_MAX_Y)
                 SingletonsRepository.hero

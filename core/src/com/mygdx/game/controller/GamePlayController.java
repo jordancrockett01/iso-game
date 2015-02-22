@@ -29,10 +29,17 @@ public class GamePlayController implements GestureDetector.GestureListener {
 
         SingletonsRepository.hero.animate();
 
+        SingletonsRepository.hud.update();
+
+
     }
 
     @Override
     public boolean touchDown(float x, float y, int pointer, int button) {
+        System.out.println(x + ", " + y);
+        int tw = 64;
+        int th = 32;
+
         return false;
     }
 

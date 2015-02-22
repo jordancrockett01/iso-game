@@ -48,6 +48,7 @@ public class Hero extends Animation {
         speed = 5;
         shotsLeft = 10;
         hp = mana = 100;
+
     }
 
     @Override
@@ -252,4 +253,5 @@ public class Hero extends Animation {
     public void decMana(int dec) {
         mana = Math.max(0, mana-dec);
     }
+
 }

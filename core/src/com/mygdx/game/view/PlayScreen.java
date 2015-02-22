@@ -47,7 +47,7 @@ public class PlayScreen extends MyScreen {
 //        movingStage.addActor(SingletonsRepository.fireOrb);
 //        movingStage.addActor(SingletonsRepository.mana);
 //        movingStage.addActor(SingletonsRepository.hp);
-//        fixedStage.addActor(SingletonsRepository.hud);
+        staticStage.addActor(SingletonsRepository.hud);
 
         // Animated pools
 //        PoolsReposetory.init();
@@ -70,19 +70,18 @@ public class PlayScreen extends MyScreen {
         Assets.music.setLooping(true);
         Assets.music.setVolume(.5f);
         Assets.music.play();
-
-
     }
     @Override
     public void render(float delta) {
 
         // clear screen;
         Gdx.gl.glClear(GL30.GL_COLOR_BUFFER_BIT);
-        // update camera position & projection
 
+        // update camera position & projection
         animatedStage.getCamera().update();
-        renderer.setView((OrthographicCamera)animatedStage.getCamera());
+        renderer.setView((OrthographicCamera) animatedStage.getCamera());
         renderer.render();
+
         batch.setProjectionMatrix(animatedStage.getCamera().combined);
 
         // update game state

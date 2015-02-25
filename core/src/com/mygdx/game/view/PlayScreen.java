@@ -70,8 +70,6 @@ public class PlayScreen extends MyScreen {
         Assets.music.setVolume(.5f);
         Assets.music.play();
 
-//        renderer.setView(SingletonsRepository.hud.camera);
-
     }
     @Override
     public void render(float delta) {

@@ -1,9 +1,7 @@
 package com.mygdx.game.controller;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.input.GestureDetector;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -68,11 +66,9 @@ public class GamePlayController implements GestureDetector.GestureListener {
         int mmX = ((int) x % 64);
         int mmY = 32 - ((int) y % 32);
 
-//        System.out.println("mmx " + mmX +"," + mmY);
-        Pixmap pm = new Pixmap(Gdx.files.internal("hitTest.png"));
         Color color = new Color();
-        color.set(pm.getPixel(mmX, mmY));
-        System.out.println(color.toString());
+        color.set(Assets.hitTest.getPixel(mmX, mmY));
+
         int regDx = 0;
         int regDy = 0;
 

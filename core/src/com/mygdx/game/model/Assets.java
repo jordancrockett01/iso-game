@@ -2,6 +2,7 @@ package com.mygdx.game.model;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -46,6 +47,9 @@ public final class Assets {
 
     // tile maps
     public static TiledMap tileMap;
+
+    // hit test
+    public static Pixmap hitTest;
 
     // load assets to memory
     public static void load() {
@@ -111,6 +115,10 @@ public final class Assets {
 //                Gdx.files.internal("gui/fire button on.png"))));
 //        fireButtonDown = new TextureRegionDrawable(new TextureRegion(
 //                new Texture(Gdx.files.internal("gui/fire button off.png"))));
+
+
+        hitTest = new Pixmap(Gdx.files.internal("hitTest.png"));
+
 
     }
 }

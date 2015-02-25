@@ -1,5 +1,7 @@
 package com.mygdx.game.controller;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Camera;
@@ -81,6 +83,11 @@ public class StaticStage extends Stage implements InputProcessor {
         } else if (!SingletonsRepository.hero.isStanding()
                 && !SingletonsRepository.hero.isBehaviorLocked()) {
             SingletonsRepository.hero.stand();
+        }
+        camera.update();
+
+        if (Gdx.input.isKeyPressed(Input.Keys.VOLUME_UP)) {
+            System.out.println("Volume up pressed");
         }
     }
 }

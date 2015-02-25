@@ -35,7 +35,6 @@ public class PlayScreen extends MyScreen {
         inputMultiplexer = new InputMultiplexer();
 
         renderer = new IsometricStaggeredTiledMapRenderer(Assets.tileMap);
-
         Gdx.input.setInputProcessor(inputMultiplexer);
 
         animatedStage = new Stage();
@@ -63,13 +62,16 @@ public class PlayScreen extends MyScreen {
 //            movingStage.addActor(l);
 
         // Play controller
-        playController = new GamePlayController(game);
+        playController = new GamePlayController(game, (OrthographicCamera)animatedStage.getCamera(), renderer);
         inputMultiplexer.addProcessor(new GestureDetector(20, 0.5f, 2, 0.15f, playController));
 
         // sound
         Assets.music.setLooping(true);
         Assets.music.setVolume(.5f);
         Assets.music.play();
+
+//        renderer.setView(SingletonsRepository.hud.camera);
+
     }
     @Override
     public void render(float delta) {
@@ -91,6 +93,12 @@ public class PlayScreen extends MyScreen {
         // draw controllers
         staticStage.processInput();
         staticStage.draw();
+
+//        if (Gdx.input.isTouched()) {
+//            Ray camRay = animatedStage.getCamera().getPickRay(Gdx.input.getX(), Gdx.input.getY());
+//            playController.getWorldToTilePos(camRay.origin.x, camRay.origin.y);
+//        }
+
     }
 
     @Override

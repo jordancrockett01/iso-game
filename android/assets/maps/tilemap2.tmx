@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="staggered" renderorder="left-down" width="32" height="64" tilewidth="64" tileheight="32" staggeraxis="y" staggerindex="odd" nextobjectid="1">
+ <tileset firstgid="1" name="tiles" tilewidth="64" tileheight="32">
+  <image source="grassland_tiles.png" width="1024" height="1344"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="32" height="64">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PMQ0AMAwDsATS+JMriUl5fBiAm6RDr1vLu7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+//y8Hmwbk3gAgAAA=
+  </data>
+ </layer>
+</map>
